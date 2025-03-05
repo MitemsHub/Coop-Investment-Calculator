@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBN Coop Investment Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="coop logo.png" alt="Cooperative Logo" class="logo">
+        </div>
+
+        <h2>CBN COOP INVESTMENT CALCULATOR</h2>
+        
+        <!-- Investment Amount -->
+        <div class="form-group">
+            <label for="investmentAmount">How much are you Investing?</label>
+            <input type="text" id="investmentAmount" placeholder="Enter amount" aria-label="Investment amount" required>
+        </div>
+
+        <!-- Interest Type -->
+        <div class="form-group">
+            <label for="interestType">Select the Interest Type</label>
+            <select id="interestType" aria-label="Interest type" required>
+                <option value="" selected disabled>Please select an interest type</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Semi-Annually">Semi-Annually</option>
+                <option value="Upfront">Upfront</option>
+                <option value="Backend">Backend</option>
+            </select>
+        </div>
+
+        <!-- Rate -->
+        <div class="form-group">
+            <label for="rate">Rate %</label>
+            <input type="text" id="rate" readonly>
+        </div>
+
+        <!-- Date of Investment -->
+        <div class="form-group">
+            <label for="investmentDateInput">Date of Investment</label>
+            <input type="date" id="investmentDateInput" required>
+        </div>
+
+        <!-- No. of Days Remaining -->
+        <div class="form-group">
+            <label for="daysRemaining">No. of Days Remaining</label>
+            <input type="text" id="daysRemaining" readonly>
+        </div>
+
+        <!-- Expected Income -->
+        <div class="form-group">
+            <label for="expectedIncome"><strong>Expected Income</strong></label>
+            <input type="text" id="expectedIncome" readonly>
+        </div>
+
+        <!-- Date of Payment -->
+        <div class="form-group">
+            <label for="paymentDate"><strong>Date of Payment</strong></label>
+            <input type="text" id="paymentDate" readonly>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            Powered by <a href="https://mitemshub.com" target="_blank" class="powered-by-link">MitemsHub</a>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

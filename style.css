@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Logo Container */
+.logo-container {
+    margin-bottom: 20px; /* Space between logo and calculator */
+    text-align: center;
+}
+
+.logo {
+    max-width: 150px; /* Adjust based on your logo size */
+    height: auto;
+}
+
+/* Container Styling */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Input Field Styles */
+input, select {
+    width: 100%;
+    max-width: 100%; /* Prevent overflow */
+    padding: 10px;
+    margin: 10px 0 15px; /* Standardized spacing */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Hover & Focus */
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Invalid Input Feedback */
+input:invalid, select:invalid {
+    border-color: #dc3545; /* Red border for invalid inputs */
+}
+
+/* Read-only Fields */
+input[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 10px; /* Standardized spacing */
+}
+
+/* Highlighted Text */
+.important-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 30px; /* Increased spacing */
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+
+.powered-by-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.powered-by-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    input, select {
+        font-size: 14px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    .container {
+        background: #1e1e1e;
+        color: #ffffff;
+    }
+
+    input, select {
+        background-color: #333;
+        color: #ffffff;
+        border-color: #444;
+    }
+
+    input[readonly] {
+        background-color: #444;
+    }
+
+    .footer {
+        color: #ccc;
+    }
+}
