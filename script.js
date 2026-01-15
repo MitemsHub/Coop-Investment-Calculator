@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Interest rates based on selection
     const rates = {
-        "Monthly": 0.1925,
-        "Quarterly": 0.195,
-        "Semi-Annually": 0.1975,
-        "Upfront": 0.19,
-        "Backend": 0.2
+        "Monthly": 0.1825,
+        "Quarterly": 0.185,
+        "Semi-Annually": 0.1875,
+        "Upfront": 0.18,
+        "Backend": 0.19
     };
 
     // Helper function to format date as dd-MMM-yyyy
