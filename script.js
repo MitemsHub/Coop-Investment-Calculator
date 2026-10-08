@@ -28,13 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${day}-${month}-${year}`;
     }
 
+    function resetDependentFields() {
+        daysRemaining.value = "";
+        expectedIncome.value = "";
+        paymentDate.value = "";
+    }
+
     function updateRate() {
         if (!interestType.value) {
             // If no interest type is selected, show a placeholder message
             rateInput.value = "Please select an interest type";
-            daysRemaining.value = "";
-            expectedIncome.value = "";
-            paymentDate.value = "";
+            resetDependentFields();
             return;
         }
 
@@ -46,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateDaysRemaining() {
         if (!interestType.value || !investmentDateInput.value || isNaN(new Date(investmentDateInput.value).getTime())) {
             // If no interest type or invalid date is selected, clear dependent fields
-            daysRemaining.value = "";
-            expectedIncome.value = "";
-            paymentDate.value = "";
+            resetDependentFields();
             return;
         }
 
@@ -131,6 +133,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listeners
     interestType.addEventListener("change", updateRate);
     investmentDateInput.addEventListener("change", updateDaysRemaining);
+
+    // Mobile browsers can restore a cached page state with stale values.
+    // Recalculate rates and clear any old values when the page is shown again.
+    window.addEventListener("pageshow", () => {
+        if (interestType.value) {
+            updateRate();
+        } else {
+            rateInput.value = "Please select an interest type";
+            resetDependentFields();
+        }
+    });
 
     // Format investment amount only when the user leaves the input field
     investmentAmount.addEventListener("blur", () => {
